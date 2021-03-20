@@ -4,16 +4,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 public class Testing{
     private static String tab="";
+    //General out put for test case calling method start
     public static void methodStart(String m )
     {
         System.out.println(tab+m+" started");
         tab=tab+" ";
     }
+    //General out put for test case calling method end
     public static void methodEnd(String m)
     {
         System.out.println(tab+m+" ended");
         tab=tab.substring(0,tab.length()-1);
     }
+    //All Test cases
     public void Test() throws IOException
     {
         Game game = new Game();
@@ -54,22 +57,27 @@ public class Testing{
             
             case 1:
             game.StartGame();
+            break;
             case 2:
             game.MultiplePlayer();
+            break;
             case 3:
             game.SinglePlayer();
+            break;
             case 4:
             game.SetPosition(s);
+            break;
             case 5:
             game.ControllSettler();
+            break;
             case 6:
-            s.SettlerBuildGate();
+          //  s.SettlerBuildGate();
             case 7:
-            s.SettlerBuildRobot();
+          //  s.SettlerBuildRobot();
             case 8:
-            s.SettlerBuildSpaceStation();
+         //   s.SettlerBuildSpaceStation();
             case 9:
-            s.SettlerDrill();
+          //  s.SettlerDrill();
 
 
 
@@ -78,7 +86,7 @@ public class Testing{
            
        
     }
-    
+    //Main program
     public static void main(String[] args)throws IOException{
         Testing test = new Testing();
         test.Test();

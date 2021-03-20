@@ -5,7 +5,7 @@ public class RadioAsteroid extends Asteroid{
     public RadioAsteroid() {}
     public void Explode(Field f) {
     	Removeresource();
-    	f.Remove(this);
+    	f.Remove();
     	System.out.println("The radioactive asteroid is in the perihelion and exploded");
     }
 }
