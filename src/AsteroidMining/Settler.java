@@ -2,11 +2,14 @@ package AsteroidMining;
 
 import java.util.ArrayList;
 
-public class Settler implements Die{
 
+
+public class Settler implements Die{
+    
+    
     public void Move(){}
 
-    public void Addresource(Resources r, Aseteroid a){}
+    public void Addresource(Resource r, Asteroid a){}
 
     public ArrayList<String> Getresource(){};
 
@@ -14,10 +17,10 @@ public class Settler implements Die{
 
     public void Hide();
 
-    public void Constructrobot(f:Field){}
+    public void Constructrobot(Field f){}
 
-    public void Constructgate(f:Field){}
+    public void Constructgate(Field f){}
 
-    public void Die(f:Field){}
+    public void Die(Field f){}
 
 }

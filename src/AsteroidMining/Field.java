@@ -2,11 +2,11 @@ package AsteroidMining;
 
 public class Field {
 
-   public void Accept(Thing t)
+   public void Accept()
    {
       Testing.methodStart("Field.Accept()");
    }
-   public void Remove(Thing t)
+   public void Remove()
    {
       Testing.methodStart("Field.Remove()");
    }

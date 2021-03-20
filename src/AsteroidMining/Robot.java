@@ -11,7 +11,7 @@ public class Robot extends Worker{
     	 System.out.println("Explosion happens to the robot but fortunately no damage to it");
      }
      public void Die(Field f) {
-    	 f.Remove(this);
+    	 f.Remove();
     	 System.out.println("The robot is destroyed");
      }
 }

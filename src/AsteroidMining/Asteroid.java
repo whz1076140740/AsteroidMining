@@ -31,6 +31,6 @@ public class Asteroid extends Thing{
       }
       public void Step() {
     	  distancetosun+=Movedirection;
-        System.out.println("The current distance to sun is:" +distancetosun)
+        System.out.println("The current distance to sun is:" +distancetosun);
       }
 }
