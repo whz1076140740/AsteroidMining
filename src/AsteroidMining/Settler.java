@@ -1,5 +1,7 @@
 package AsteroidMining;
 
+import java.util.ArrayList;
+
 public class Settler implements Die{
 
     public void Move(){}
@@ -10,7 +12,7 @@ public class Settler implements Die{
 
     public void Removeresources(Resources r){}
 
-    public void Hide()
+    public void Hide();
 
     public void Constructrobot(f:Field){}
 

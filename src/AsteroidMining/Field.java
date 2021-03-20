@@ -1,10 +1,18 @@
 package AsteroidMining;
 
-import java.util.ArrayList;
-
 public class Field {
-   public ArrayList<Field> field = new ArrayList<Field>();
 
-   public void Accept(Thing t){}
-   public void Remove(Thing t){}
+   public void Accept(Thing t)
+   {
+      Testing.methodStart("Field.Accept()");
+   }
+   public void Remove(Thing t)
+   {
+      Testing.methodStart("Field.Remove()");
+   }
+   public void GetNeighbors()
+   {
+      Testing.methodStart("Field.GetNeighbors()");
+   }
+
 }
