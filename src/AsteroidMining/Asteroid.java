@@ -6,7 +6,6 @@ public class Asteroid extends Thing{
       private String resource;
       private long distancetosun;
       private int id;
-      private int TPid;
       public int temp;
       public String tmp;
       public long tmp1;
