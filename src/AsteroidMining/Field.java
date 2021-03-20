@@ -1,6 +1,7 @@
 package AsteroidMining;
 
 public class Field {
+
    public void Accept(Thing t)
    {
       Testing.methodStart("Field.Accept()");
@@ -13,4 +14,5 @@ public class Field {
    {
       Testing.methodStart("Field.GetNeighbors()");
    }
+
 }
