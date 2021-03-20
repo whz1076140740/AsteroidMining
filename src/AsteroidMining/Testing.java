@@ -20,6 +20,7 @@ public class Testing{
     public void Test() throws IOException
     {
         Game game = new Game();
+        Robot robot = new Robot();
         Settler s= new Settler();
         String enter;
         System.out.println("Please chose the test case:");
@@ -46,7 +47,8 @@ public class Testing{
         System.out.println("22:RobotDrill");
         System.out.println("23:RobotHide");
         System.out.println("24:RobotUseGate");
-        System.out.println("21:EndGame");
+        System.out.println("25:EndGame");
+
 
         BufferedReader br = new BufferedReader(new 
         InputStreamReader(System.in));
@@ -78,7 +80,18 @@ public class Testing{
          //   s.SettlerBuildSpaceStation();
             case 9:
           //  s.SettlerDrill();
-
+            case 21:
+            robot.Travel();
+            break;
+            case 22:
+            robot.Drill();
+            break;
+            case 23:
+            robot.Hide();
+            break;
+            case 24:
+            robot.Tp();
+            break;
 
 
         }

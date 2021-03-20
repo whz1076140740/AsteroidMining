@@ -1,11 +1,11 @@
 package AsteroidMining;
 
 public class WaterIce  extends Asteroid {
-	public String Resource="WaterIce";
+	private String Resource="WaterIce";
     public WaterIce() {}
     public void sublime(Field f) {
-    	f.Remove(this);
     	Removeresource();
+		f.Remove(this);
     	System.out.println("The waterice asteroid is in the perihelion, thus resource and asteroid evaporated");
     }
 }
