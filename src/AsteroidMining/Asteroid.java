@@ -13,24 +13,30 @@ public class Asteroid extends Thing{
       
       public Asteroid() {}; 
       public void Move() {
-    	  if(distancetosun<period){
-                  Movedirection=1;
-                  Step();
-            }
-        if(distancetosun==period){
-                  Movedirection=-1;
-                  Step();
-            }     
-        if(distancetosun==0){
-                  Movedirection=1;
-                  Step();
-            }   
+            Testing.methodStart("Asteroid.Move()");
+            Step();
+    	  //if(distancetosun<period){
+        //          Movedirection=1;
+        //          Step();
+        //    }
+        //if(distancetosun==period){
+        //          Movedirection=-1;
+        //          Step();
+        //    }     
+        //if(distancetosun==0){
+        //          Movedirection=1;
+        //          Step();
+        //    }   
       }
       public void Removeresource() {
-    	  resource = "";
+    	      Testing.methodStart("Asteroid.Removeresource()");
+            Testing.methodEnd("Asteroid.Removeresource()");
+            //resource = "";
       }
       public void Step() {
-    	  distancetosun+=Movedirection;
-        System.out.println("The current distance to sun is:" +distancetosun)
+            Testing.methodStart("Asteroid.Step()");
+            Testing.methodEnd("Asteroid.Step()");
+    	  //distancetosun+=Movedirection;
+       // System.out.println("The current distance to sun is:" +distancetosun);
       }
 }

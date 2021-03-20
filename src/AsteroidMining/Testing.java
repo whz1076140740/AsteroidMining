@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 public class Testing{
+    private static final Field WaterIce = null;
     private static String tab="";
     public static void methodStart(String m )
     {
@@ -27,6 +28,7 @@ public class Testing{
         System.out.println("7:SettlerBuildRobot");
         System.out.println("8:SettlerBuildSpaceStation");
         System.out.println("9:SettlerDrill");
+
 
         BufferedReader br = new BufferedReader(new 
         InputStreamReader(System.in));
