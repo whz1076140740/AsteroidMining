@@ -22,6 +22,12 @@ public class Testing{
         System.out.println("2:MultiPlayer");
         System.out.println("3:SinglePlayer");
         System.out.println("4:SetPosition");
+        System.out.println("5:ControllSettler");
+        System.out.println("4:SettlerBuildGate");
+        System.out.println("4:SettlerBuildRobot");
+        System.out.println("4:SettlerBuildSpaceStation");
+        System.out.println("4:SettlerDrill");
+
         BufferedReader br = new BufferedReader(new 
         InputStreamReader(System.in));
         enter = br.readLine();
