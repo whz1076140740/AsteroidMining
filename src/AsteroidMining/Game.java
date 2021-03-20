@@ -3,7 +3,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 public class Game {
-   
+   private Settler s;
+   private Map map;
+   private Field field;
     public void StartGame()throws IOException
     {
         String enter;
@@ -14,11 +16,11 @@ public class Game {
         BufferedReader br = new BufferedReader(new 
         InputStreamReader(System.in));
         enter = br.readLine();
-        if(enter=="1")
+        if(enter.equals("1"))
         {
             SinglePlayer();
         }
-        if(enter=="2"){
+        if(enter.equals("2")){
             MultiplePlayer();
         }
     }
@@ -27,24 +29,30 @@ public class Game {
         Testing.methodStart("Game.EndGame()");
     }
     public void SinglePlayer(){
+        Testing.methodStart("Game.SinglePlayer()");
         Map map = new Map();
         map.CreateAsteroid();
         map.CreateSettler();
         map.CreateRobot();
         map.CreateSunstorm();
-        Testing.methodStart("Game.SinglePlayer()");
-        System.out.println("SetPosition");
+        SetPosition(s);
+        
     }
     public void MultiplePlayer(){
         Testing.methodStart("Game.MultiplePlayer()");
         Map map = new Map();
         map.CreateAsteroid();
-        map.CreateSettler();
         map.CreateRobot();
         map.CreateSunstorm();
-        System.out.println("2.MultiplePlayer");
         System.out.println("SetPosition 1");
         System.out.println("SetPosition 2");
     }
-    public 
+    public void SetPosition(Settler s)
+    {
+        Testing.methodStart("Game.SetPosition()");
+        this.s = s;
+        map.CreateSettler();
+        field.Accept(s);
+    }
+
 }

@@ -2,30 +2,30 @@ package AsteroidMining;
 
 
 public class Map {
-   
+    
 
     public void CreateAsteroid()
     {
-        Testing.methodStart("Game.SinglePlayer()");
+        Testing.methodStart("Map.CreateAsteroid()");
     }
     public void CreateSettler()
     {
-        Testing.methodStart("Game.SinglePlayer()");
+        Testing.methodStart("Map.CreateSettler()");
     }
     public void CreateRobot()
     {
-        Testing.methodStart("Game.SinglePlayer()");
+        Testing.methodStart("Map.CreateRobot()");
     }
     public void CreateSunstorm()
     {
-        Testing.methodStart("Game.SinglePlayer()");
+        Testing.methodStart("Map.CreateSunstorm()");
     }
     public void CreateGate()
     {
-        Testing.methodStart("Game.SinglePlayer()");
+        Testing.methodStart("Map.CreateGate()");
     }
     public void Step()
     {
-        Testing.methodStart("Game.SinglePlayer()");
+        Testing.methodStart("Map.Step()");
     }
 }
