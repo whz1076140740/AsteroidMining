@@ -1,4 +1,4 @@
-package am;
+package AsteroidMining;
 
 public class Robot extends Worker{
      public Robot() {}
