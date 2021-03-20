@@ -1,6 +1,7 @@
 package AsteroidMining;
 
 public class Robot extends Worker{
+     private String id;
      public Robot() {}
      public void Hide() {
     	  Testing.methodStart("The robot is hiding");
