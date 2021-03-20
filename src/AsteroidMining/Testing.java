@@ -36,7 +36,6 @@ public class Testing{
         StartGame();
     }
     else 
-         EndGame();
-         
+        EndGame();
     }
 }
