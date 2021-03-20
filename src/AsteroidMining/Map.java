@@ -2,7 +2,7 @@ package AsteroidMining;
 
 
 public class Map {
-   
+    
 
     public void CreateAsteroid()
     {

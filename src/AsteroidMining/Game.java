@@ -16,11 +16,11 @@ public class Game {
         BufferedReader br = new BufferedReader(new 
         InputStreamReader(System.in));
         enter = br.readLine();
-        if(enter=="1")
+        if(enter.equals("1"))
         {
             SinglePlayer();
         }
-        if(enter=="2"){
+        if(enter.equals("2")){
             MultiplePlayer();
         }
     }
@@ -30,6 +30,7 @@ public class Game {
     }
     public void SinglePlayer(){
         Testing.methodStart("Game.SinglePlayer()");
+        Map map = new Map();
         map.CreateAsteroid();
         map.CreateSettler();
         map.CreateRobot();
@@ -43,7 +44,6 @@ public class Game {
         map.CreateAsteroid();
         map.CreateRobot();
         map.CreateSunstorm();
-        System.out.println("2.MultiplePlayer");
         System.out.println("SetPosition 1");
         System.out.println("SetPosition 2");
     }
