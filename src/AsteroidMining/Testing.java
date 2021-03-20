@@ -5,18 +5,23 @@ import java.io.InputStreamReader;
 public class Testing{
     private static final Field WaterIce = null;
     private static String tab="";
+    //General out put for test case calling method start
     public static void methodStart(String m )
     {
         System.out.println(tab+m+" started");
         tab=tab+" ";
     }
+    //General out put for test case calling method end
     public static void methodEnd(String m)
     {
         System.out.println(tab+m+" ended");
-        tab=tab.substring(0,tab.length()-2);
+        tab=tab.substring(0,tab.length()-1);
     }
+    //All Test cases
     public void Test() throws IOException
     {
+        Game game = new Game();
+        Settler s= new Settler();
         String enter;
         System.out.println("Please chose the test case:");
         System.out.println("1:StartGame");
@@ -28,23 +33,62 @@ public class Testing{
         System.out.println("7:SettlerBuildRobot");
         System.out.println("8:SettlerBuildSpaceStation");
         System.out.println("9:SettlerDrill");
+        System.out.println("10:SettlerHide");
+        System.out.println("11:SettlerMine");
+        System.out.println("12:SettlerPutResourceDown");
+        System.out.println("13:SettlerSetGate");
+        System.out.println("14:SettlerTravel");
+        System.out.println("15:SettlerUseGate");
+        System.out.println("17:ViewMap");
+        System.out.println("18:ControllerAsteroid");
+        System.out.println("19:ControlSunStorm");
+        System.out.println("20:ControlRobot");
+        System.out.println("21:RobotTravel");
+        System.out.println("22:RobotDrill");
+        System.out.println("23:RobotHide");
+        System.out.println("24:RobotUseGate");
+        System.out.println("21:EndGame");
 
 
         BufferedReader br = new BufferedReader(new 
         InputStreamReader(System.in));
         enter = br.readLine();
-    
-        if(enter.equals("1"))
+        int num = Integer.parseInt(enter);
+        switch(num)
         {
-            Game game = new Game();
+            
+            case 1:
             game.StartGame();
-        }
-        if(enter.equals("2")){
-            Game game = new Game();
+            break;
+            case 2:
             game.MultiplePlayer();
+            break;
+            case 3:
+            game.SinglePlayer();
+            break;
+            case 4:
+            game.SetPosition(s);
+            break;
+            case 5:
+            game.ControllSettler();
+            break;
+            case 6:
+          //  s.SettlerBuildGate();
+            case 7:
+          //  s.SettlerBuildRobot();
+            case 8:
+         //   s.SettlerBuildSpaceStation();
+            case 9:
+          //  s.SettlerDrill();
+
+
+
         }
+        
+           
+       
     }
-    
+    //Main program
     public static void main(String[] args)throws IOException{
         Testing test = new Testing();
         test.Test();
