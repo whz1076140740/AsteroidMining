@@ -1,5 +1,5 @@
 package AsteroidMining;
 
-public interface Die {
-
+public interface CanDie{
+    public void Die(Field f);
 }
