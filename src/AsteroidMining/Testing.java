@@ -2,6 +2,8 @@ package AsteroidMining;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+//A testing Class so that can run the whole game in this class and check the dialog
 public class Testing{
     private static String tab="";
     
@@ -19,14 +21,21 @@ public class Testing{
     }
     //All Test cases
     public void Test() throws IOException
-    {
+{
         Game game = new Game();
         Robot robot = new Robot();
         Settler s= new Settler();
         Field f= new Field();
         Resource r= new Resource();
         Asteroid a= new Asteroid();
-        String enter;
+        String enter = "26";
+
+        while(!enter.equals("24")){
+        BufferedReader br = new BufferedReader(new 
+        InputStreamReader(System.in));
+
+        System.out.println("--Please input anything to start--");
+        br.readLine();
         //All test cases in the skeleton
         System.out.println("Please chose the test case:");
         System.out.println("1:StartGame");
@@ -52,13 +61,13 @@ public class Testing{
         System.out.println("21:RobotDrill");
         System.out.println("22:RobotHide");
         System.out.println("23:RobotUseGate");
-        System.out.println("25:EndGame");
+        System.out.println("24:EndGame");
 
 
-        BufferedReader br = new BufferedReader(new 
-        InputStreamReader(System.in));
+        //take the choose from tester
         enter = br.readLine();
         int num = Integer.parseInt(enter);
+        //switch for check the tester choose now
         switch(num)
         {
             
@@ -123,6 +132,8 @@ public class Testing{
             s.TP();
             break;
 
+            //View Map Test Case
+            //Which should be presented by later version
             case 16:
             System.out.println("This is UI in game.");
             System.out.println("Settler1 alive, located : A1, resources: WaterIce");
@@ -169,9 +180,9 @@ public class Testing{
   
         }
         
-           
+    }    
        
-    }
+}
     //Main program
     public static void main(String[] args)throws IOException{
       Testing test = new Testing();

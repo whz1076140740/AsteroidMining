@@ -6,6 +6,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
+//to the teacher for some reasons, the functions code is too long 
+//because we was not able to put all SunStorm Touch and Radio explosion condition into one single function
+//Sorry for making read
+
+
+//A user control Thing which can be died
 public class Settler extends Worker implements CanDie{
 
     //settler current field
@@ -16,56 +22,124 @@ public class Settler extends Worker implements CanDie{
     ArrayList<String> resources = new ArrayList<String>();
     //teleport gate ID
     int teleportaion_Gate;
-  
-
-    //teleport gate ID
+    //teleport gate
     Teleportaion_Gate gate = new Teleportaion_Gate();
+    //resources be carried by settler
+    Resource r = new Resource();
 
-
-    //resources to be loaded
-    Resource r = new Resource();    
     //Mine
-    public void Mine(Asteroid a){
+    //Settler get resource from Asteroid
+    // and at same time Asteroid remove it by core
+    public void Mine(Asteroid a) throws IOException{
         Settler s= new Settler();
         Testing.methodStart(" Settler.Mine()");
+        
+       String enter;
+       System.out.println("Whether the explosion conditions are met at this time?(Yes or No)");
+       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       
         //Settler get resource from Asteroid a
         s.GetResource();
         //Asteroid a remove resource
         a.Removeresource();
        Testing.methodEnd(" Settler.Mine()");
+
+       //Check explosion condition
+       enter = br.readLine();
+       if(enter.equals("Yes"))
+       {
+          ra.Explode(cf);
+          return;
+       }
+       //Check sunstorm condition
+       System.out.println("Whether the sun storm conditions are met at this time?(Yes or No)");
+       BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
+       enter = br1.readLine();
+       if(enter.equals("Yes"))
+       {
+           //for test
+          st.Touch(s);
+          return;
+       }
     }
 
-//Add resource to the Asteroid
-    public void AddResource(Resource r, Asteroid a){
+    //Add resource to the Asteroid
+    //Settler add resource into Asteroid
+    //And check wheather the resource is waterice which will be sublime in the perihelion
+    public void AddResource(Resource r, Asteroid a) throws IOException{
         Testing.methodStart(" Settler.Addresource(r,Asteroid)");
-        //Asteroid take resource from settler 添加
+        //Asteroid take resource from settler
        System.out.println("Asteroid put specific resource.");
-        //settler remove the resource
+       System.out.println("Check if Asteroid is in the perihelion");
+       System.out.println("If Asteroid is in the perihelion input 1");
+       System.out.println("If Asteroid is not in the perihelion input 2");
+       BufferedReader br = new BufferedReader(new 
+       InputStreamReader(System.in));
+       String enter = br.readLine();
+       int num = Integer.parseInt(enter);
+       if(num == 1){
+        System.out.println("Check if resources is WaterIce or Uranium");
         this.Removeresources(r);
-        Testing.methodEnd(" Settler.Addresource(r,Asteroid)");
-    }
 
+        System.out.println("If resources is WaterIce input 1");
+        System.out.println("If resources is Uranium input 2");
+        System.out.println("If resources is not-both of them input 3");
+        if(num==1){
+            WaterIce w = new WaterIce();
+            w.sublime(f);
+        }
+        if(num==2){
+            RadioAsteroid rd = new RadioAsteroid();
+            rd.Explode(f);
+            this.Die(f);
+        }
+        if(num==3){ 
+            //if not WaterIce or Uranuim
+            if(num == 2){
+                //End by do nothing else
+             Testing.methodEnd(" Settler.Addresource(r,Asteroid)");
+             return;
+            }
+        }
+    }else{
+        //if not in perhelion not do anything
+       if(num == 2){
+        //End by do nothing else
+        Testing.methodEnd(" Settler.Addresource(r,Asteroid)");
+        return;
+       }
+    }
+    //End by do nothing else
+        Testing.methodEnd(" Settler.Addresource(r,Asteroid)");
+}
+
+    // return the resources in the Settler
+    //Not in the Test case
     public ArrayList<String> GetResource(){
         Testing.methodStart(" Settler.Getresource()");
-        
         Testing.methodEnd("Settler.Getresource()");
         return resources;
     }
 
 
+    //Settler Remove its own resources
+    //not in the testcase
     public void Removeresources(Resource r){
         Testing.methodStart("Settler.Removeresources(Resources r)");
         Testing.methodEnd(" Settler.Removeresources(Resources r)");
     }
 
+    //Settler Hide Test case
+    //Settler hide into an asteroid
     public void Hide(){
         Testing.methodStart("Settler.Hide()");
-        Worker w = new Worker();
-        //添加 Add Settler into Asteroid
-        a.Protect(w);
+        //Add Settler into Asteroid
+        a.Protect(this);
         Testing.methodEnd("Settler.Hide()");
     }
 
+    //Settler construct Robot Test case
+    //Settler create a robot and spend resources and then put into the field
     public void Constructrobot(Field f){
         Testing.methodStart("Settler.Constructrobot()");
         //settler create robot
@@ -77,27 +151,54 @@ public class Settler extends Worker implements CanDie{
         Testing.methodEnd("Settler.Constructrobot()");
     }
 
-    //constructgate
+    //Settler constructgate Test case
+    //Settler create gate by spending resources
     public void Constructgate(Field f){
         Testing.methodStart("Settler.Constructgate()");
-        //settler ConstructGate 添加
+        //settler ConstructGate
         Testing.methodStart("Settler.CreateTeleportaion-gate");
         //Teleportaion_Gate tp = new Teleportaion_Gate();
         System.out.println("Gate-1.");
         Testing.methodEnd("Settler.CreateTeleportaion-gate");
         Testing.methodEnd("Settler.Constructgate()");
     }
-    //新的函数 添加
-    public void BuildGate(){
-        //settler create robot
+
+    //Settler BuildGate Test case
+    //Settler build gate in the field and field will accept it
+    //Check the sunstorm and perihelion explosion condition same time
+    public void BuildGate() throws IOException{
+        //settler build gate in the asteroid
         Testing.methodStart("Settler.BuildGate()");
         System.out.println("Gate-1.");
         //field and asteroid accept gate
-        Teleportaion_Gate gate= new Teleportaion_Gate();
-        f.Accept(gate);
+        f.Accept(this.gate);
+
+        //Check explosion condition
+        String enter;
+        System.out.println("Whether the explosion conditions are met at this time?(Yes or No)");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        enter = br.readLine();
+        if(enter.equals("Yes"))
+        {
+           ra.Explode(cf);
+           return;
+        }
+        //Check sunstorm condition
+        System.out.println("Whether the sun storm conditions are met at this time?(Yes or No)");
+        BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
+        enter = br1.readLine();
+        if(enter.equals("Yes"))
+        {
+            //for test
+        Settler s =new Settler();
+           st.Touch(s);
+           return;
+        }
         Testing.methodEnd("Settler.BuildGate()");
     }
-    //die 
+
+    //die
+    //Settler died and be removed by the field
     public void Die(Field f){
         Testing.methodStart(" Settler.Die()");
         //field remove settler 
@@ -108,7 +209,9 @@ public class Settler extends Worker implements CanDie{
         f.Remove(this);
         Testing.methodEnd(" Settler.Die()");
     }
-    //Settler Check the resources and the asteroid. then Build Space Station
+    //SettlerBuildSpaceStation Test case
+    //Settler Check the resources and the asteroid. 
+    //then Build Space Station
     public void SettlerBuildSpaceStation() throws IOException{
         Testing.methodStart("Settler.SettlerBuildSpaceStation()");
         //check resources
@@ -130,7 +233,6 @@ public class Settler extends Worker implements CanDie{
             //Settler build station and EndGame
             System.out.println("You build a station successfully");
             Testing.methodStart("EndGame()");
-
             }else{
                 if(num==2)
                 System.out.println("Settler is not in an exist Asteroid");
