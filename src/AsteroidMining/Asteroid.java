@@ -1,15 +1,15 @@
 package AsteroidMining;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Asteroid extends Thing{
-      private int depth;
-      private String resource;
-      private long distancetosun;
-      private int id;
-      private ArrayList<String> Workersonit = new ArrayList<String>();
-      private int Movedirection;
-      private long period;
+    //  private int depth;
+     // private String resource;
+     // private long distancetosun;
+    //  private int id;
+    //  private ArrayList<String> Workersonit = new ArrayList<String>();
+     // private int Movedirection;
+    //  private long period;
       
       public Asteroid() {}; 
       public void Move() {
@@ -38,5 +38,9 @@ public class Asteroid extends Thing{
             Testing.methodEnd("Asteroid.Step()");
     	  //distancetosun+=Movedirection;
        // System.out.println("The current distance to sun is:" +distancetosun);
+      }
+      public void Protect(Worker w) {
+            Testing.methodStart("Asteroid.Protect()");
+            Testing.methodEnd("Asteroid.Protect()");
       }
 }

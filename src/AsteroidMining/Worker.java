@@ -1,3 +1,4 @@
+
 package AsteroidMining;
 
 import java.io.BufferedReader;
@@ -7,15 +8,15 @@ import java.io.InputStreamReader;
 public class Worker extends Thing{
 	 Field cf = new Field();//current field, just use to test
 	 Field nf = new Field();//neighboring field
-	 Worker settler1 = new Worker(); // just used to test method
-	 Worker robot1 = new Worker();
+      Thing t = new Thing();
+	 //Worker worker = new Worker(); // just used to test method
 	 RadioAsteroid ra = new RadioAsteroid();
 	 SunStorm st = new SunStorm();
-	public void  SettlerTravel() throws IOException 
+	public void  Travel() throws IOException 
     {
-	 cf.Remove(settler1);
-	 cf.GetNeighbors();
-	 nf.Accept(settler1);
+	 cf.Remove(t);
+	 cf.GetNeighours();
+	 nf.Accept(t);
    	 Testing.methodStart("Movehere()");
    	 Testing.methodEnd("Movehere()");
    	 String enter;
@@ -24,42 +25,20 @@ public class Worker extends Thing{
    	 enter = br.readLine();
    	 if(enter.equals("Yes"))
    	 {
-   		ra.Explode();
+   		ra.Explode(cf);
    	 }
    	 System.out.println("Whether the sun storm conditions are met at this time?(Yes or No)");
    	 BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
    	 enter = br1.readLine();
    	 if(enter.equals("Yes"))
    	 {
-   		 st.Touch(settler1);
+   		 st.Touch(this);
    	 }
     }
 	
-	public void  RobotTravel() throws IOException 
-    {
-	 cf.Remove(robot1);
-	 cf.GetNeighbors();
-	 nf.Accept(robot1);
-   	 Testing.methodStart("Movehere()");
-   	 Testing.methodEnd("Movehere()");
-   	 String enter;
-   	 System.out.println("Whether the explosion conditions are met at this time?(Yes or No)");
-   	 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-   	 enter = br.readLine();
-   	 if(enter.equals("Yes"))
-   	 {
-   		ra.Explode();
-   	 }
-   	 System.out.println("Whether the sun storm conditions are met at this time?(Yes or No)");
-   	 BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
-   	 enter = br1.readLine();
-   	 if(enter.equals("Yes"))
-   	 {
-   		 st.Touch(robot1);
-   	 }
-    }
+
 	
-	public void SettlerDrill() throws IOException 
+	public void Drill() throws IOException 
     {
    	 String enter;
    	 System.out.println("If depth of mantle larger than 0?(Yes or No)");
@@ -73,44 +52,23 @@ public class Worker extends Thing{
        	 enter = br.readLine();
        	 if(enter.equals("Yes"))
        	 {
-       		ra.Explode();
+       		ra.Explode(cf);
        	 }
        	 System.out.println("Whether the sun storm conditions are met at this time?(Yes or No)");
        	 BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
        	 enter = br1.readLine();
        	 if(enter.equals("Yes"))
        	 {
-       		st.Touch(settler1);
+       		st.Touch(t);
        	 }
-   	 }
+                 }
+ }
    	 
-   	public void RobotDrill() throws IOException 
-    {
-   	 String enter;
-   	 System.out.println("If depth of mantle larger than 0?(Yes or No)");
-   	 BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
-   	 enter = br2.readLine();
-   	 if(enter.equals("Yes"))
-   	 {
-   		 System.out.println("Reduce asteroid's depth by 1");
-       	 System.out.println("Whether the explosion conditions are met at this time?(Yes or No)");
-       	 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-       	 enter = br.readLine();
-       	 if(enter.equals("Yes"))
-       	 {
-       		ra.Explode();
-       	 }
-       	 System.out.println("Whether the sun storm conditions are met at this time?(Yes or No)");
-       	 BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
-       	 enter = br1.readLine();
-       	 if(enter.equals("Yes"))
-       	 {
-       		st.Touch(robot1);
-       	 }
-   	 }
-    }
+   
+   	 
+    
    	
-   	public void Settlerusegate() throws IOException 
+   	public void TP() throws IOException 
     {
    	 String enter;
    	 System.out.println("Whether the gate is activated?(Yes or No)");
@@ -132,25 +90,4 @@ public class Worker extends Thing{
    			 
 }
    	
-   	public void Robotusegate() throws IOException 
-    {
-   	 String enter;
-   	 System.out.println("Whether the gate is activated?(Yes or No)");
-   	 BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
-   	 enter = br2.readLine();
-   	 if(enter.equals("Yes"))
-   	 {
-   		 Testing.methodStart("Movehere(currentgate)");
-   		 Testing.methodStart("Movehere(neighborgate)");
-   		 Testing.methodStart("Movehere(asteroid)");
-   		 Testing.methodEnd("Movehere(currentgate)");
-   		 Testing.methodEnd("Movehere(neighborgate)");
-   		 Testing.methodEnd("Movehere(asteroid)");
-   	 }
-   	 if(enter.equals("No"))
-   	 {
-   		 System.out.println("There is no activated potal on this asteroid,and the teleportation cannot be completeed");
-   	 }
-   
-}
 }
