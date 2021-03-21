@@ -3,6 +3,7 @@ package AsteroidMining;
 import java.util.ArrayList;
 
 public class Field {
+
    public ArrayList<Field> field = new ArrayList<Field>();
 
    public void Accept(Thing t){
@@ -18,5 +19,7 @@ public class Field {
       Testing.methodStart("Field.Remove(settler1)");
       Testing.methodEnd("Field.Remove(settler1)");
       return f ;
+
    }
+
 }

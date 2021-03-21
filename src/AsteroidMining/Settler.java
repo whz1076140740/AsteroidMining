@@ -3,6 +3,7 @@ package AsteroidMining;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 
+
 public class Settler extends Worker implements CanDie{
 
     //settler current field
@@ -16,6 +17,7 @@ int teleportaion_Gate;
 
 //teleport gate ID
 Teleportaion_Gate gate = new Teleportaion_Gate();
+
 
 //resources to be loaded
 Resources r = new Resources r();
@@ -48,6 +50,7 @@ Resources r = new Resources r();
         Testing.methodEnd("Settler.Getresource()");
         return resources;
     }
+
 
     public void Removeresources(Resources r){
         Testing.methodStart("Settler.Removeresources(Resources r)");

@@ -1,47 +1,42 @@
 package AsteroidMining;
 
+import java.util.ArrayList;
 
 public class Asteroid extends Thing{
       private int depth;
       private String resource;
       private long distancetosun;
       private int id;
-      private int TPid;
-      public int temp;
-      public String tmp;
-      public long tmp1;
-      public int tmp2;
+      private ArrayList<String> Workersonit = new ArrayList<String>();
+      private int Movedirection;
+      private long period;
       
-      public Asteroid() {};
-      
-      public int Getdepth() {
-		temp = depth;
-		System.out.println("The depth of this asteroid is"+ temp);
-		return temp;
-       }
-
-      public String GetResource() {
-    	  tmp = resource;
-    	  System.out.println("The resource type of this asteroid is"+ tmp);
-    	  return tmp;
-      }
-      public long Getdistance() {
-    	  tmp1 = distancetosun;
-    	  System.out.println("The current distance to sun is"+ tmp1);
-    	  return tmp1;
-      }
-      public int getid() {
-    	  tmp2 = id;
-    	  System.out.println("The id of the asteroid is "+ tmp2);
-    	  return tmp2;
-      }
+      public Asteroid() {}; 
       public void Move() {
-    	  
+            Testing.methodStart("Asteroid.Move()");
+            Step();
+    	  //if(distancetosun<period){
+        //          Movedirection=1;
+        //          Step();
+        //    }
+        //if(distancetosun==period){
+        //          Movedirection=-1;
+        //          Step();
+        //    }     
+        //if(distancetosun==0){
+        //          Movedirection=1;
+        //          Step();
+        //    }   
       }
       public void Removeresource() {
-    	  resource = "";
+    	      Testing.methodStart("Asteroid.Removeresource()");
+            Testing.methodEnd("Asteroid.Removeresource()");
+            //resource = "";
       }
       public void Step() {
-    	  
+            Testing.methodStart("Asteroid.Step()");
+            Testing.methodEnd("Asteroid.Step()");
+    	  //distancetosun+=Movedirection;
+       // System.out.println("The current distance to sun is:" +distancetosun);
       }
 }
