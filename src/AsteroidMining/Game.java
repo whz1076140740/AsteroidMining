@@ -62,7 +62,7 @@ public class Game {
         Testing.methodStart("Game.SetPosition()");
         this.s = s;
         map.CreateSettler();
-        field.Accept();
+        field.Accept(s);
         Testing.methodEnd("Game.SetPosition()");
     }
     //Test case of ControllSettler

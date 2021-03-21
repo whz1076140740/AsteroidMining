@@ -1,7 +1,7 @@
 package AsteroidMining;
 
 public class WaterIce  extends Asteroid {
-	private String Resource="WaterIce";
+	//private String Resource="WaterIce";
     public WaterIce() {}
     public void sublime(Field f) {
     	Removeresource();

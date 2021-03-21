@@ -1,13 +1,9 @@
 package AsteroidMining;
 
 public class SunStorm extends Thing implements Stepable{
-    public void Touch(Settler s){
+    public void Touch(Thing t){
         Testing.methodStart("Touch(Settler)");
         Testing.methodEnd("Touch(Settler)");
-    }
-    public void Toouch(Robot r){
-        Testing.methodStart("Touch(Settler)");
-        Testing.methodEnd("Sunstorm.Touch(Robot)");
     }
     public void Step(){
         Move();

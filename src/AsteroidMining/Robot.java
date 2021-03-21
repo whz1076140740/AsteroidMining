@@ -1,16 +1,10 @@
 package AsteroidMining;
 
+import java.io.IOException;
+
 public class Robot extends Worker{
-     private String id;
-     public Robot() {}
-     public void Travel(){
-       Testing.methodStart("Robot.Travel()");
-       Testing.methodEnd("Robot.Travel()");
-     }
-     public void Drill(){
-       Testing.methodStart("Robot.Drill()");
-       Testing.methodEnd("Robot.Drill()");
-     }
+     //private String id;
+    
      public void Tp(){
        Testing.methodStart("Robot.Tp()");
        Testing.methodEnd("Robot.Tp()");
@@ -19,8 +13,9 @@ public class Robot extends Worker{
     	  Testing.methodStart("Robot.Hide()");
        Testing.methodEnd("Robot.Hide()");
      }
-     public void HitbyExplode() {
-    	 Travel();
+     public void HitbyExplode() throws IOException {
+      Robot r = new Robot();
+    	 r.Travel();
     	 System.out.println("Robot 1 was attacked by explode and landing a neighboring asteroid A2");
      }
      public void Die(Field f) {
