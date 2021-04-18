@@ -1,21 +1,47 @@
 package AsteroidMining;
 
-public class Field {
+import java.util.ArrayList;
 
-    //Test case of Accept
-   public void Accept()
-   {
-      Testing.methodStart("Field.Accept()");
+import jdk.internal.loader.Resource;
+
+//A class which contains some Thing in a field
+public class Field {
+   Boolean hide=false;
+   Boolean gate=false;
+   // neigbour Fields
+   public ArrayList<Field> field = new ArrayList<Field>();
+   public List<Robot> robot = new List<Robot>();
+   public List<Settler> settler = new List<Settler>();
+   public ArrayList<Resource> resource = new List<Resource>();
+   public ArrayList<Gate> gates = new List<Gate>();
+   //Accept Thing into this Field
+   public void Accept(Setteler s){
+     settler.add(r);
    }
-    //Test case of Remove
-   public void Remove()
+   public Override Accept(Robot r)
    {
-      Testing.methodStart("Field.Remove()");
+      robot.add(r);
    }
-    //Test case of GetNeighbors
-   public void GetNeighbors()
+   public Override Accept(Resource re)
    {
-      Testing.methodStart("Field.GetNeighbors()");
+      resource.add(re);
+   }
+   public Override Accept(Gate g)
+   {
+      gates.add(g);
+   }
+   //Remove Thing from this Field
+   public void Remove(Thing t){
+      Testing.methodStart("Field.Remove(thing)");
+      Testing.methodEnd("Field.Remove(thing)");
+   }
+   //Return Neighbour fields
+   public ArrayList<Field> GetNeighours(){
+      ArrayList<Field> f = new ArrayList<Field>();
+      Testing.methodStart("Field.Remove(thing)");
+      Testing.methodEnd("Field.Remove(thing)");
+      return f ;
+
    }
 
 }
