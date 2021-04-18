@@ -1,5 +1,6 @@
 package AsteroidMining;
 
+import java.lang.reflect.Field;
 
 //A class named Asteroid which can contain Resources or workers in the core
 public class Asteroid extends Thing{
@@ -37,8 +38,10 @@ public class Asteroid extends Thing{
                   // System.out.println("The current distance to sun is:" +distancetosun);
       }
       //Accept settler to the core to protect
-      public void Protect(Worker w) {
+      public void Protect(Worker w,Filed f) {
             Testing.methodStart("Asteroid.Protect()");
+            f.Hide=true;
+            f.Accept(w);
             Testing.methodEnd("Asteroid.Protect()");
       }
 }
