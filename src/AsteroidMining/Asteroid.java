@@ -1,17 +1,9 @@
 package AsteroidMining;
 
-//import java.util.ArrayList;
+import java.lang.reflect.Field;
 
 //A class named Asteroid which can contain Resources or workers in the core
 public class Asteroid extends Thing{
-      //Some member not important
-                  //  private int depth;
-                  // private String resource;
-                  // private long distancetosun;
-                  //  private int id;
-                  //  private ArrayList<String> Workersonit = new ArrayList<String>();
-                  // private int Movedirection;
-                  //  private long period;
       
       public Asteroid() {}; 
       //Decide Sun move dircetion to the asteroid and Move Sun Distance by one
@@ -35,7 +27,6 @@ public class Asteroid extends Thing{
       public void Removeresource() {
     	      Testing.methodStart("Asteroid.Removeresource()");
             Testing.methodEnd("Asteroid.Removeresource()");
-                   //resource = "";
       }
       //Step Asteroid to move sun peroid
       public void Step() {
@@ -47,8 +38,10 @@ public class Asteroid extends Thing{
                   // System.out.println("The current distance to sun is:" +distancetosun);
       }
       //Accept settler to the core to protect
-      public void Protect(Worker w) {
+      public void Protect(Worker w,Filed f) {
             Testing.methodStart("Asteroid.Protect()");
+            f.Hide=true;
+            f.Accept(w);
             Testing.methodEnd("Asteroid.Protect()");
       }
 }

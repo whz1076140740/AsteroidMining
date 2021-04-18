@@ -110,7 +110,6 @@ public class Worker extends Thing{
    	 {
    		 System.out.println("There is no activated potal on this asteroid,and the teleportation cannot be completeed");
    	 }
-   			 
+    }		 
 }
    	
-}
