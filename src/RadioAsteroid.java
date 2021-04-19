@@ -1,5 +1,3 @@
-package AsteroidMining;
-
 //A initialization type Asteroid called RadioAsteroid
 public class RadioAsteroid extends Asteroid{
     //private String Resource="Uranium";

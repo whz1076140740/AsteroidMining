@@ -1,4 +1,3 @@
-package AsteroidMining;
 
 import java.io.IOException;
 

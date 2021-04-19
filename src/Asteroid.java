@@ -1,4 +1,3 @@
-package AsteroidMining;
 
 import java.lang.reflect.Field;
 
@@ -38,7 +37,7 @@ public class Asteroid extends Thing{
                   // System.out.println("The current distance to sun is:" +distancetosun);
       }
       //Accept settler to the core to protect
-      public void Protect(Worker w,Filed f) {
+      public void Protect(Worker w,Field f) {
             Testing.methodStart("Asteroid.Protect()");
             f.Hide=true;
             f.Accept(w);

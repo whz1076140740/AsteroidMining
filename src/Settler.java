@@ -1,4 +1,3 @@
-package AsteroidMining;
 
 import java.awt.Robot;
 import java.io.BufferedReader;
@@ -20,12 +19,12 @@ public class Settler extends Worker {
     //settler current asteroid
     Asteroid a = new Asteroid();
     //resources in the settler bag
-    ArrayList<String> resources = new ArrayList<String>();
+    ArrayList<Resource> resourcesList = new ArrayList<Resource>();
     
     //teleport gate ID
     int teleportaion_Gate;
     //teleport gate
-    ArrayList<Gate> gates= new ArrayList<Gate>();
+    ArrayList<Teleportaion_Gate> gates= new ArrayList<Teleportaion_Gate>();
     //resources be carried by settler
     Resource r = new Resource();
 
@@ -117,21 +116,21 @@ public class Settler extends Worker {
 
     // return the resources in the Settler
     //Not in the Test case
-    public ArrayList<String> GetResource(){
+    public ArrayList<Resource> GetResource(){
         Testing.methodStart(" Settler.Getresource()");
         Testing.methodEnd("Settler.Getresource()");
-        return resources;
+        return resourcesList;
     }
 
 
     //Settler Remove its own resources
     //not in the testcase
     public void Removeresources(Resource r){
-        for(int i=0;i<resources.size();i++)
+        for(int i=0;i<resourcesList.size();i++)
         {
-            if(resources.get(i)==Removeresources(r))
+            if(resourcesList.get(i)==r)
             {
-                this.resources.remove(r);
+                this.resourcesList.remove(r);
                 System.out.println("Success remove resource.");
             }
             else
@@ -162,35 +161,35 @@ public class Settler extends Worker {
         int iron;
         int carbon;
         int uranium;
-        for(int i=0;i<resources.size();i++)
+        for(int i=0;i<resourcesList.size();i++)
         {
-           if(resources(i)=="Iron")
+           if(resourcesList.get(i)==Resource.)
             iron++;
-            if(resources(i)=="Carbon")
+            if(resourcesList.get(i)=="Carbon")
             carbon++;
-            if(resources(i)=="Uranium")
+            if(resourcesList.get(i)=="Uranium")
             uranium++;
         }
         if(iron>=1&&carbon>=1&&uranium>=1)
         {
             Robot r = new Robot();
              f.Accept(r);
-             for(int i=0;i<resources.size();i++)
+             for(int i=0;i<resourcesList.size();i++)
                 {
-                    if(resources(i)=="Carbon")
-                    Removeresources(resources(i));
+                    if(resourcesList.get(i)=="Carbon")
+                    Removeresources(resourcesList.get(i));
                     break;
                 }
                 for(int i=0;i<resources.size();i++)
                 {
-                    if(resources(i)=="Carbon")
-                    Removeresources(resources(i));
+                    if(resourcesList.get(i)=="Carbon")
+                    Removeresources(resourcesList.get(i));
                     break;
                 }
                 for(int i=0;i<resources.size();i++)
                 {
-                    if(resources(i)=="Carbon")
-                    Removeresources(resources(i));
+                    if(resourcesList.get(i)=="Carbon")
+                    Removeresources(resourcesList.get(i));
                     break;
                 }
             System.out.println("Success construct.");
@@ -210,40 +209,40 @@ public class Settler extends Worker {
         int uranium;
         for(int i=0;i<resources.size();i++)
         {
-           if(resources(i)=="Iron")
+           if(resourcesList.get(i)=="Iron")
             iron++;
-            if(resources(i)=="WaterIce")
+            if(resourcesList.get(i)=="WaterIce")
             waterice++;
-            if(resources(i)=="Uranium")
+            if(resourcesList.get(i)=="Uranium")
             uranium++;
         }
         if(iron>=2&&waterice>=1&&uranium>=1)
         {
-            Gate g1 = new Gate();
-            Gate g2 = new Gate();
-            gates.Add(g1);
-            gates.Add(g2);
+            Teleportaion_Gate g1 = new Teleportaion_Gate();
+            Teleportaion_Gate g2 = new Teleportaion_Gate();
+            gates.add(g1);
+            gates.add(g2);
             int count=0;
              f.Accept(r);
-             for(int i=0;i<resources.size();i++)
+             for(int i=0;i<resourcesList.size();i++)
                 {
-                    if(resources(i)=="Carbon")
-                    Removeresources(resources(i));
+                    if(resourcesList.get(i)=="Carbon")
+                    resourcesList.remove(i);
                     break;
                 }
-                for(int i=0;i<resources.size();i++)
+                for(int i=0;i<resourcesList.size();i++)
                 {
         
                     if(resources(i)=="WaterIce")
-                    Removeresources(resources(i));
+                    resourcesList.remove(i);
                     count++;
-                    if(count=2)
+                    if(count==2)
                     break;
                 }
-                for(int i=0;i<resources.size();i++)
+                for(int i=0;i<resourcesList.size();i++)
                 {
                     if(resources(i)=="Uranium")
-                    Removeresources(resources(i));
+                    resourcesList.remove(i);
                     break;
                 }
             System.out.println("Success construct.");
@@ -257,13 +256,13 @@ public class Settler extends Worker {
     //Settler build gate in the field and field will accept it
     //Check the sunstorm and perihelion explosion condition same time
     public void BuildGate() {
-        if(f.gate==false&&s.gates!=null)
+        if(f.gate==false&&this.gates!=null)
         {
             for(int i=0;i<= gates.size();i++) {
-               if(gates(i)!=null)
+               if(gates.get(i)!=null)
                {
-                 f.Accept(gates(i));
-                 gates.Remove(gates(i));
+                 f.Accept(gates.get(i));
+                 gates.remove(gates.get(i));
                  f.gate =true;
                  System.out.println("Success build gate.");
                }

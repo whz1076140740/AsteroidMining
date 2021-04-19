@@ -1,7 +1,6 @@
-package AsteroidMining;
 
 //WaterIce resources
-public class WaterIce  extends Asteroid {
+public class WaterIce  extends Resource {
 	//private String Resource="WaterIce";
     public WaterIce() {}
 	//WaterIce be sublime in this case

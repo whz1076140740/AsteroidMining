@@ -1,4 +1,3 @@
-package AsteroidMining;
 
 //A class which used for creation and containing Field
 public class Map {
