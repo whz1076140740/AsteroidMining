@@ -1,47 +1,14 @@
-package AsteroidMining;
 
 import java.io.IOException;
 
 //A system controled Thing and can be died
 public class Robot extends Worker{
      //private String id;
-    private String id;
-    private int Onwhichasteroiod;
-    //robot current field
-    private Field field;
     
-    //robot current asteroid
-    private Asteroid asteroid;
-    Robot r = new Robot(){};
      //Test case Robot TP
-     public void  Travel() throws IOException
-  {
-	 cf.Remove(this);
-	 cf.GetNeighours();
-	 nf.Accept(this);
-	 a.Movehere(this);
-	if(a.distancetosun < 2 && a.resource.equals("uranium")&& a.depth){
-		this.HitbyExplode();
-	}
-
-	for(int i = 0 ; i < st.alist.size();i++){
-           if(st.alist.get(i).id == this.Onwhichasteroiod){
-			   st.Touch(this);
-		   }
-		}
-    }
-     public void Tp(Asteroid a, Map m,Field f,Field nf){
-        if(a.GetTPid!=null){
-          for(int i; i < m.Getglist().size();i++){
-            if(m.Getglist().get(i).id == a.GetTPid()){
-              m.Getglist().get(i).GetNeighbor();
-              Asteroid na = m.Getglist().get(i).Getlocation();
-              f.remove(this);
-              nf.Accept(this);
-              na.Movehere(this);
-            }
-          }
-        }
+     public void Tp(){
+       Testing.methodStart("Robot.Tp()");
+       Testing.methodEnd("Robot.Tp()");
      }
      public void Drill(Asteroid asteroid) throws IOException 
     {
@@ -67,9 +34,15 @@ public class Robot extends Worker{
   }
      //Test case Robot Hide
      
+     //Test case Robot Hide
+     public void Hide() {
+    	  Testing.methodStart("Robot.Hide()");
+       Testing.methodEnd("Robot.Hide()");
+     }
      
      //Robot be explode by Asteroid and then move to another Asteroid
      public void HitbyExplode() throws IOException {
+      Robot r = new Robot();
     	 r.Travel();
     	 System.out.println("Robot 1 was attacked by explode and landing a neighboring asteroid A2");
      }
@@ -79,12 +52,4 @@ public class Robot extends Worker{
     	 f.Remove(this);
     	 System.out.println("Robot 1 was attacked by sunstorm and died.");
      }
-     public String GetRobotId(){
-       return id;
-     }
-    public void movehere(Asteroid a, Field nf){
-      asteroid = a;
-      field = nf;
-    }
 }
-     

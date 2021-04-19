@@ -1,4 +1,4 @@
-package AsteroidMining;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -97,7 +97,7 @@ public class Testing{
             break;
 
             case 7:
-            s.Constructgate(f);
+            s.Constructgate(f, s);
             break;
 
             case 8:
@@ -110,11 +110,11 @@ public class Testing{
             break;
 
             case 10:
-            s.Hide();
+            s.Hide(f);
             break;
 
             case 11:
-            s.Mine(a);
+            s.Mine();
             break;
 
             case 12:
@@ -122,7 +122,7 @@ public class Testing{
             break;
 
             case 13:
-            s.Constructgate(f);
+            s.Constructgate(f, s);
             break;
 
             case 14:
@@ -130,7 +130,7 @@ public class Testing{
             break;
 
             case 15:
-            s.TP();
+            s.TP(null);
             break;
 
             //View Map Test Case
@@ -141,9 +141,9 @@ public class Testing{
             System.out.println("Robot1 alive, located: A2");
             System.out.println("sunstorm is affecting c1, c2, c3, b2, b3 , next round it will");
             System.out.println("move to c5,c6,c7,b5,b6");
-            System.out.println("A1: depth equals 0 , the resources is uranium£¬five rounds to");
+            System.out.println("A1: depth equals 0 , the resources is uraniumï¿½ï¿½five rounds to");
             System.out.println("reach perihelion");
-            System.out.println(" A2£ºdepth equals 3 £¬ the resources is unknown, five rounds");
+            System.out.println(" A2ï¿½ï¿½depth equals 3 ï¿½ï¿½ the resources is unknown, five rounds");
             System.out.println(" to reach perihelion");
             break;
 
@@ -172,7 +172,7 @@ public class Testing{
             break;
           
             case 23:
-            robot.TP();
+            robot.TP(null);
             break;
            
             case 24:
