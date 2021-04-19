@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 //A system controlled Thing which can attack Settler and Robot
 public class SunStorm extends Thing implements Stepable{
-
+    public ArrayList<Asteroid> alist = new ArrayList<Asteroid>();
     Field f = new Field();
     //When Robot or Settler be touched then be called
     //And then check wheather they need be died

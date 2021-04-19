@@ -1,9 +1,26 @@
 package AsteroidMining;
 
-import java.lang.reflect.Field;
+import java.util.ArrayList;
+
+//import java.util.ArrayList;
 
 //A class named Asteroid which can contain Resources or workers in the core
 public class Asteroid extends Thing{
+      private int depth;
+      private String resource;
+      private long distancetosun;
+      private int id;
+      private int TPid;
+      private ArrayList<String> Workersonit = new ArrayList<String>();
+      private int Movedirection;
+      //Some member not important
+                  //  private int depth;
+                  // private String resource;
+                  // private long distancetosun;
+                  //  private int id;
+                  //  private ArrayList<String> Workersonit = new ArrayList<String>();
+                  // private int Movedirection;
+                  //  private long period;
       
       public Asteroid() {}; 
       //Decide Sun move dircetion to the asteroid and Move Sun Distance by one
@@ -27,6 +44,7 @@ public class Asteroid extends Thing{
       public void Removeresource() {
     	      Testing.methodStart("Asteroid.Removeresource()");
             Testing.methodEnd("Asteroid.Removeresource()");
+                   //resource = "";
       }
       //Step Asteroid to move sun peroid
       public void Step() {
@@ -38,10 +56,15 @@ public class Asteroid extends Thing{
                   // System.out.println("The current distance to sun is:" +distancetosun);
       }
       //Accept settler to the core to protect
-      public void Protect(Worker w,Filed f) {
+      public void Protect(Worker w) {
             Testing.methodStart("Asteroid.Protect()");
-            f.Hide=true;
-            f.Accept(w);
             Testing.methodEnd("Asteroid.Protect()");
+      }
+      public void Movehere(Worker w){
+            w.Onwhichasteroiod = this.id;
+            this.Workersonit.add(Integer.toString(w.id));
+      }
+      public int GetTPid(){
+            return TPid;
       }
 }
