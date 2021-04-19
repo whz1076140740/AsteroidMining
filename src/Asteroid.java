@@ -1,4 +1,3 @@
-
 import java.lang.reflect.Field;
 
 //A class named Asteroid which can contain Resources or workers in the core

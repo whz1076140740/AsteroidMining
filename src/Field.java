@@ -1,9 +1,6 @@
-
+package AsteroidMining.AsteroidMining;
 
 import java.util.ArrayList;
-
-
-
 
 
 //A class which contains some Thing in a field
@@ -12,23 +9,23 @@ public class Field {
    Boolean gate=false;
    // neigbour Fields
    public ArrayList<Field> field = new ArrayList<Field>();
-   public ArrayList<Robot> robot = new ArrayList<Robot>();
-   public ArrayList<Settler> settler = new ArrayList<Settler>();
-   public ArrayList<Resource> resource = new ArrayList<Resource>();
-   public ArrayList<Teleportaion_Gate> gates = new ArrayList<Teleportaion_Gate>();
+   public List<Robot> robot = new List<Robot>();
+   public List<Settler> settler = new List<Settler>();
+   public ArrayList<Resource> resource = new List<Resource>();
+   public ArrayList<Gate> gates = new List<Gate>();
    //Accept Thing into this Field
-   public void Accept(Settler s){
-     settler.add(s);
+   public void Accept(Setteler s){
+     settler.add(r);
    }
-   public void Accept(Robot r)
+   public Override Accept(Robot r)
    {
       robot.add(r);
    }
-   public void Accept(Resource re)
+   public Override Accept(Resource re)
    {
       resource.add(re);
    }
-   public void Accept(Teleportaion_Gate g)
+   public Override Accept(Gate g)
    {
       gates.add(g);
    }
@@ -45,5 +42,5 @@ public class Field {
       return f ;
 
    }
-}
 
+}
