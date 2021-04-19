@@ -28,7 +28,24 @@ public class Settler extends Worker {
     ArrayList<Gate> gates= new ArrayList<Gate>();
     //resources be carried by settler
     Resource r = new Resource();
+    
+    //Travel
+    public void  Travel() throws IOException
+    {
+	 cf.Remove(this);
+	 cf.GetNeighours();
+	 nf.Accept(this);
+	 a.Movehere(this);
+	if(a.distancetosun < 2 && a.resource.equals("uranium")&& a.depth){
+		this.die();
+	}
 
+	for(int i = 0 ; i < st.alist.size();i++){
+           if(st.alist.get(i).id == this.Onwhichasteroiod){
+			   st.Touch(this);
+		   }
+		}
+    }
     //Mine
     //Settler get resource from Asteroid
     // and at same time Asteroid remove it by core

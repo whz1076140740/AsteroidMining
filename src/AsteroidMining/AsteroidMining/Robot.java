@@ -6,8 +6,30 @@ import java.io.IOException;
 public class Robot extends Worker{
      //private String id;
     private String id;
+    private int Onwhichasteroiod;
+    //robot current field
+    private Field field;
+    
+    //robot current asteroid
+    private Asteroid asteroid;
     Robot r = new Robot(){};
      //Test case Robot TP
+     public void  Travel() throws IOException
+  {
+	 cf.Remove(this);
+	 cf.GetNeighours();
+	 nf.Accept(this);
+	 a.Movehere(this);
+	if(a.distancetosun < 2 && a.resource.equals("uranium")&& a.depth){
+		this.HitbyExplode();
+	}
+
+	for(int i = 0 ; i < st.alist.size();i++){
+           if(st.alist.get(i).id == this.Onwhichasteroiod){
+			   st.Touch(this);
+		   }
+		}
+    }
      public void Tp(Asteroid a, Map m,Field f,Field nf){
         if(a.GetTPid!=null){
           for(int i; i < m.Getglist().size();i++){
@@ -35,7 +57,7 @@ public class Robot extends Worker{
 			System.out.println("The asteroid is already drilled through!");
 		}
 		asteroid.Move();  //asteroid and sun storm moves after worker does the action
-		st.Move();
+		st.move();
 		//after sun storm moves, if sun storm touches worker then worker dies.
 		for(int i = 0; i < st.alist.size; i++){
 			if(st.alist.get(i).id == asteroid.id){
@@ -44,11 +66,7 @@ public class Robot extends Worker{
 		}
   }
      //Test case Robot Hide
-     public void Hide(Asteroid a) {
-    	  if(a.resource.equals("")&&a.depth == 0){
-          a.Protect(this);
-        }
-     }
+     
      
      //Robot be explode by Asteroid and then move to another Asteroid
      public void HitbyExplode() throws IOException {
@@ -64,4 +82,9 @@ public class Robot extends Worker{
      public String GetRobotId(){
        return id;
      }
+    public void movehere(Asteroid a, Field nf){
+      asteroid = a;
+      field = nf;
+    }
 }
+     

@@ -26,6 +26,9 @@ public class Worker extends Thing{
 	 cf.GetNeighours();
 	 nf.Accept(this);
 	 a.Movehere(this);
+	if(a.distancetosun < 2 && a.resource.equals("uranium")&& a.depth){
+		this.die();
+	}
 
 	for(int i = 0 ; i < st.alist.size();i++){
            if(st.alist.get(i).id == this.Onwhichasteroiod){
@@ -33,36 +36,7 @@ public class Worker extends Thing{
 		   }
 		}
     }
-	 
-	 //Worker drill the asteroid and be checked the asteroid condition and do drill
-	 //and then be checked with the Explosion or Sunstorm touch condition
-	public void Drill(Asteroid asteroid) throws IOException 
-    {
-	// reduce the depth of asteroid and check that if ra and fulfills condition then explode
-	    if(asteroid.depth!= 0){
-			asteroid.depth -= 1;
-			if(asteroid.depth ==0&&asteroid.resource.equals("uranium")&& asteroid.distancetosun< 20){
-               this.die();
-			   Remove(asteroid); //fulfills the explode condition , worker dies
-			}                    //and this asteroid is removed from the field
-		}
-		else{
-			System.out.println("The asteroid is already drilled through!");
-		}
-		asteroid.Move();  //asteroid and sun storm moves after worker does the action
-		st.Move();
-		//after sun storm moves, if sun storm touches worker then worker dies.
-		for(int i = 0; i < st.alist.size; i++){
-			if(st.alist.get(i).id == asteroid.id){
-				st.Touch(this);
-			}
-		}
- }
-   	 
-   
-   	 
-    
-   	
+	   	
 	 //Settler/Robot TP Test case
 	 //Worker be checked the gate situition before TP  and then TP by using the gate
    	public void TP() throws IOException 
@@ -98,3 +72,4 @@ public class Worker extends Thing{
 	public String GetId(){
 		return id;
 	}
+}
