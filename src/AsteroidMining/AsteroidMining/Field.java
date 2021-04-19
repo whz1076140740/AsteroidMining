@@ -9,23 +9,23 @@ public class Field {
    Boolean gate=false;
    // neigbour Fields
    public ArrayList<Field> field = new ArrayList<Field>();
-   public List<Robot> robot = new List<Robot>();
-   public List<Settler> settler = new List<Settler>();
-   public ArrayList<Resource> resource = new List<Resource>();
-   public ArrayList<Gate> gates = new List<Gate>();
+   public ArrayList<Robot> robot = new ArrayList<Robot>();
+   public ArrayList<Settler> settler = new ArrayList<Settler>();
+   public ArrayList<Resource> resource = new ArrayList<Resource>();
+   public ArrayList<Teleportaion_Gate> gates = new ArrayList<Teleportaion_Gate>();
    //Accept Thing into this Field
-   public void Accept(Setteler s){
-     settler.add(r);
+   public void Accept(Settler s){
+     settler.add(s);
    }
-   public Override Accept(Robot r)
+   public void Accept(Robot r)
    {
       robot.add(r);
    }
-   public Override Accept(Resource re)
+   public void Accept(Resource re)
    {
       resource.add(re);
    }
-   public Override Accept(Gate g)
+   public void Accept(Teleportaion_Gate g)
    {
       gates.add(g);
    }

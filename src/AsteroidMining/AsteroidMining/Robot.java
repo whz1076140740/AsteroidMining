@@ -1,4 +1,4 @@
-
+package AsteroidMining.AsteroidMining;
 import java.io.IOException;
 
 //A system controled Thing and can be died

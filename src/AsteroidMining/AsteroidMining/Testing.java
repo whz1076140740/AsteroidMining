@@ -1,4 +1,4 @@
-
+package AsteroidMining.AsteroidMining;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -118,7 +118,7 @@ public class Testing{
             break;
 
             case 12:
-            s.AddResource(r,a);
+            s.AddResource(r.toString());
             break;
 
             case 13:

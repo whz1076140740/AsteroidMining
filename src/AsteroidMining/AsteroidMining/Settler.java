@@ -1,4 +1,4 @@
-
+package AsteroidMining.AsteroidMining;
 import java.awt.Robot;
 import java.io.BufferedReader;
 import java.io.IOException;

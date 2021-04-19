@@ -1,4 +1,4 @@
-
+package AsteroidMining.AsteroidMining;
 //WaterIce resources
 public class WaterIce  extends Resource {
 	//private String Resource="WaterIce";
