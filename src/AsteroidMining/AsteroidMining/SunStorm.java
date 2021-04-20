@@ -12,6 +12,9 @@ public class SunStorm extends Thing implements Stepable{
     public ArrayList<Asteroid> getonwhich() {
     	return onwhichasteroid;
     }
+    public SunStorm(String ID){
+        super(ID);
+    }
     //When Robot or Settler be touched then be called
     //And then check wheather they need be died
     public void Touch(Settler s) throws IOException{

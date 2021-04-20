@@ -4,7 +4,9 @@ import java.io.IOException;
 //A system controled Thing and can be died
 public class Robot extends Worker{
      //private String id;
-    
+     public Robot(String ID){
+      super(ID);
+    }
      //Test case Robot TP
      public void Tp(){
        Testing.methodStart("Robot.Tp()");

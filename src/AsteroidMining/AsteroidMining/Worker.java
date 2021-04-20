@@ -13,6 +13,9 @@ public class Worker extends Thing{
 	 //Worker worker = new Worker(); // just used to test method
 	 RadioAsteroid ra = new RadioAsteroid();
 	 SunStorm st = new SunStorm();
+	 public Worker(String ID){
+		super(ID);
+	 }
 	 public Field getcf() {
 		return cf;
 	   }

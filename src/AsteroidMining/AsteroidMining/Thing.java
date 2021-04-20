@@ -1,6 +1,11 @@
-import java.io.BufferedReader;
-
+package AsteroidMining.AsteroidMining;
 //A base calss which be included in the field
 public class Thing {
-     public void Hitby() {}
+     private String ID;
+     public Thing(String ID){
+          this.ID = ID;
+     }
+     public String getID(){
+          return this.ID;
+     }
 }

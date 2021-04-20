@@ -6,7 +6,10 @@ public class Teleportaion_Gate extends Thing{
     private Field flocation;
     private Asteroid neighbor;
     private Field fneighbor;
-    
+    public Teleportaion_Gate(String ID){
+        super(ID);
+    }
+
     public void setid(String a) {
     	id = a;
     }

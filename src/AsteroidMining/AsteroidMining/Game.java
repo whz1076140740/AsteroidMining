@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 public class Game {
     //Settler to be setted
    private Settler s;
-
+     private Map map= new Map();
    //Test case of StartGame
    //Ask player in which game type want to be started and set settler
     public void StartGame()throws IOException
