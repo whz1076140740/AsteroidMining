@@ -19,13 +19,13 @@ public class Testing{
         System.out.println(tab+m+" ended");
         tab=tab.substring(0,tab.length()-1);
     }
-    public void Testcase(){
-
+    public void Testcase() throws IOException{
+        game.StartGame();
     }
+    Game game = new Game();
     //All Test cases
     public void Test() throws IOException
 {
-        Game game = new Game();
         Robot robot = new Robot();
         Settler s= new Settler();
         Field f= new Field();

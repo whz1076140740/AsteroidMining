@@ -4,11 +4,16 @@ import java.lang.reflect.Field;
 
 //A class named Asteroid which can contain Resources or workers in the core
 public class Asteroid extends Thing{
-      private String resource;
-      public String getresource() {
+      private Resource resource;
+
+      public Asteroid(String ID){
+            super(ID);
+      }
+
+      public Resource getresource() {
     	  return resource;
       }
-      public void setresource(String a) {
+      public void setresource(Resource a) {
     	  resource = a;
       }
       private int depth;
@@ -42,7 +47,6 @@ public class Asteroid extends Thing{
     	     id = a;
       }
       
-      public Asteroid() {}; 
       //Decide Sun move dircetion to the asteroid and Move Sun Distance by one
       public void Move() {
             Testing.methodStart("Asteroid.Move()");

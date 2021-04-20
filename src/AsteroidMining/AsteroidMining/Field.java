@@ -28,8 +28,9 @@ public class Field {
       return gate;
    };
    public String getID(){
-      return ID;
+      return this.ID;
    };
+   
    //Accept Thing into this Field
    public void Accept(Settler s){
      settler.add(s);
