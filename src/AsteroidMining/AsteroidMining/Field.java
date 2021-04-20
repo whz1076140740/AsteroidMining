@@ -6,9 +6,10 @@ import java.util.ArrayList;
 
 //A class which contains some Thing in a field
 public class Field {
-   Boolean hide=false;
-   Boolean gate=false;
+   private Boolean hide=false;
+   private Boolean gate=false;
    // neigbour Fields
+   private String ID;//ID of field format is (F01-F30)
    public ArrayList<Field> neighbors = new ArrayList<Field>();
    public ArrayList<Robot> robot = new ArrayList<Robot>();
    public ArrayList<Settler> settler = new ArrayList<Settler>();
@@ -16,6 +17,19 @@ public class Field {
    public ArrayList<Teleportaion_Gate> gates = new ArrayList<Teleportaion_Gate>();
    public ArrayList<SunStorm> sunstorm = new ArrayList<SunStorm>();
 
+   public Field(String ID){
+      this.ID = ID;
+    };
+
+   public Boolean getHideState(){
+      return hide;
+   };
+   public Boolean getGateState(){
+      return gate;
+   };
+   public String getID(){
+      return ID;
+   };
    //Accept Thing into this Field
    public void Accept(Settler s){
      settler.add(s);

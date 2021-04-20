@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 public class Game {
     //Settler to be setted
    private Settler s;
-     private Map map= new Map();
+   private Map map= new Map();
    //Test case of StartGame
    //Ask player in which game type want to be started and set settler
     public void StartGame()throws IOException
@@ -45,8 +45,8 @@ public class Game {
         Testing.methodStart("Game.SinglePlayer()");
         Map map = new Map();
         map.CreateAsteroid();
-        map.CreateRobot();
-        map.CreateSunstorm();
+        //map.CreateRobot();
+        //map.CreateSunstorm();
         SetPosition(s);
         Testing.methodEnd("Game.SinglePlayer()");
         

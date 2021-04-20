@@ -20,10 +20,16 @@ public class Map {
         //create 30 asteroid with format(A01-A30)
     public void CreateAsteroid(){
         //create 30 asteroid with format(A01-A30)
-        for(int i =1;i<31;i++){
+        for(int i = 1;i<=3;i++){
             //要在Asteroid 的构造函数更改,构造要添加id的参数 要生成resource
-           if(i<10) AliveAsteroid.add(new Asteroid("A"+"0"+Integer.toString(i)));
-           if(i>=10) AliveAsteroid.add(new Asteroid("A"+Integer.toString(i)));
+           if(i<10) {
+            fields.add(new Field("F"+"0"+Integer.toString(i)));
+            AliveAsteroid.add(new Asteroid("A"+"0"+Integer.toString(i)));
+           }
+           if(i>=10){
+            fields.add(new Field("F"+Integer.toString(i)));
+            AliveAsteroid.add(new Asteroid("A"+Integer.toString(i)));
+           }
         }
         Testing.methodStart("Map.CreateAsteroid()");
     }

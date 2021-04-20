@@ -28,6 +28,9 @@ public class Settler extends Worker {
     //resources be carried by settler
     Resource r = new Resource();
 
+    public Settler(String ID){
+        super(ID);
+    }
     //Mine
     //Settler get resource from Asteroid
     // and at same time Asteroid remove it by core
